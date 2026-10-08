@@ -1,0 +1,1044 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#c94268">
+  <title>Um convite para Luana ❤️</title>
+  <style>
+    :root {
+      --wine: #6f1d3f;
+      --rose: #c94268;
+      --coral: #ef7891;
+      --cream: #fff8f7;
+      --ink: #442535;
+      --muted: #835768;
+      --glass: rgba(255, 255, 255, 0.7);
+      --glass-border: rgba(255, 255, 255, 0.72);
+      --shadow: 0 24px 70px rgba(111, 29, 63, 0.22);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      min-width: 320px;
+    }
+
+    body {
+      min-width: 320px;
+      min-height: 100vh;
+      margin: 0;
+      overflow-x: hidden;
+      color: var(--ink);
+      font-family: "Inter", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background:
+        radial-gradient(circle at 12% 12%, rgba(255, 255, 255, 0.62) 0 8%, transparent 26%),
+        radial-gradient(circle at 90% 88%, rgba(255, 173, 187, 0.58) 0 8%, transparent 30%),
+        linear-gradient(135deg, #ffd9df 0%, #f6a6b4 47%, #d65a7b 100%);
+    }
+
+    .page {
+      position: relative;
+      display: grid;
+      place-items: center;
+      width: 100%;
+      min-height: 100vh;
+      padding: 32px 16px;
+      isolation: isolate;
+    }
+
+    .glow {
+      position: absolute;
+      z-index: -1;
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      background: rgba(255, 244, 242, 0.24);
+      filter: blur(2px);
+    }
+
+    .glow-one {
+      top: 8%;
+      left: -80px;
+    }
+
+    .glow-two {
+      right: -68px;
+      bottom: 8%;
+      width: 210px;
+      height: 210px;
+    }
+
+    .heart {
+      position: absolute;
+      z-index: 0;
+      color: rgba(255, 255, 255, 0.62);
+      font-size: clamp(1.1rem, 4vw, 1.8rem);
+      animation: float 5s ease-in-out infinite;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    .heart-one {
+      top: 12%;
+      left: 10%;
+    }
+
+    .heart-two {
+      top: 25%;
+      right: 9%;
+      font-size: 1rem;
+      animation-delay: 1.1s;
+    }
+
+    .heart-three {
+      bottom: 14%;
+      left: 12%;
+      font-size: 1.2rem;
+      animation-delay: 2.2s;
+    }
+
+    .heart-four {
+      right: 16%;
+      bottom: 23%;
+      font-size: 0.85rem;
+      animation-delay: 0.5s;
+    }
+
+    .heart-five {
+      top: 42%;
+      left: 5%;
+      font-size: 0.7rem;
+      animation-duration: 6.5s;
+      animation-delay: 1.8s;
+    }
+
+    .heart-six {
+      top: 61%;
+      right: 4%;
+      font-size: 0.75rem;
+      animation-duration: 7s;
+      animation-delay: 2.6s;
+    }
+
+    .heart-seven {
+      top: 7%;
+      right: 25%;
+      font-size: 0.65rem;
+      animation-duration: 6s;
+      animation-delay: 3.2s;
+    }
+
+    .card {
+      position: relative;
+      z-index: 1;
+      width: min(100%, 470px);
+      padding: clamp(30px, 8vw, 50px) clamp(22px, 7vw, 44px) 34px;
+      overflow: hidden;
+      text-align: center;
+      background: var(--glass);
+      border: 1px solid var(--glass-border);
+      border-radius: 30px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+    }
+
+    .card::before {
+      position: absolute;
+      top: -90px;
+      right: -70px;
+      width: 190px;
+      height: 190px;
+      content: "";
+      background: rgba(255, 255, 255, 0.28);
+      border-radius: 50%;
+    }
+
+    .card.celebrating {
+      animation: card-glow 1400ms ease-in-out;
+    }
+
+    .card.accepted .sushi-mark,
+    .card.accepted .eyebrow,
+    .card.accepted .intro,
+    .card.accepted .question,
+    .card.accepted .promise {
+      display: none;
+    }
+
+    .sushi-mark {
+      position: relative;
+      display: grid;
+      place-items: center;
+      width: 66px;
+      height: 66px;
+      margin: 0 auto 23px;
+      color: #fff;
+      font-size: 2rem;
+      background: linear-gradient(145deg, var(--rose), var(--wine));
+      border: 5px solid rgba(255, 255, 255, 0.64);
+      border-radius: 22px;
+      box-shadow: 0 10px 22px rgba(111, 29, 63, 0.2);
+      transform: rotate(-6deg);
+      animation: reveal 700ms cubic-bezier(0.22, 1, 0.36, 1) both;
+      animation-delay: 120ms;
+    }
+
+    .eyebrow {
+      position: relative;
+      margin: 0 0 10px;
+      color: var(--wine);
+      font-size: clamp(1.65rem, 7vw, 2rem);
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      animation: reveal 700ms cubic-bezier(0.22, 1, 0.36, 1) both;
+      animation-delay: 180ms;
+    }
+
+    .intro {
+      position: relative;
+      margin: 0;
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.6;
+      animation: reveal 700ms cubic-bezier(0.22, 1, 0.36, 1) both;
+      animation-delay: 1.08s;
+    }
+
+    .question {
+      position: relative;
+      margin: 28px 0 14px;
+      color: var(--wine);
+      font-size: clamp(1.55rem, 7.5vw, 2.1rem);
+      line-height: 1.18;
+      letter-spacing: -0.045em;
+      animation: reveal 700ms cubic-bezier(0.22, 1, 0.36, 1) both;
+      animation-delay: 1.98s;
+    }
+
+    .promise {
+      position: relative;
+      margin: 0 auto;
+      max-width: 310px;
+      color: var(--muted);
+      font-size: 0.96rem;
+      line-height: 1.55;
+      animation: reveal 700ms cubic-bezier(0.22, 1, 0.36, 1) both;
+      animation-delay: 2.88s;
+    }
+
+    .actions {
+      position: relative;
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      width: 100%;
+      margin-top: 30px;
+      animation: reveal 700ms cubic-bezier(0.22, 1, 0.36, 1) both;
+      animation-delay: 3.78s;
+    }
+
+    .button {
+      min-height: 54px;
+      flex: 1 1 0;
+      padding: 13px 15px;
+      color: var(--wine);
+      font: inherit;
+      font-size: 0.95rem;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+      cursor: pointer;
+      border: 1px solid rgba(111, 29, 63, 0.13);
+      border-radius: 16px;
+      transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .button:focus-visible {
+      outline: 3px solid rgba(111, 29, 63, 0.35);
+      outline-offset: 3px;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 18px rgba(111, 29, 63, 0.14);
+    }
+
+    .button:active {
+      transform: translateY(0);
+    }
+
+    .yes {
+      color: #fff;
+      background: linear-gradient(135deg, var(--rose), var(--wine));
+      border-color: transparent;
+      box-shadow: 0 8px 18px rgba(111, 29, 63, 0.2);
+    }
+
+    .no {
+      background: rgba(255, 255, 255, 0.55);
+      transition: left 280ms cubic-bezier(0.22, 1, 0.36, 1),
+        top 280ms cubic-bezier(0.22, 1, 0.36, 1),
+        transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
+    }
+
+    .no.is-compact {
+      min-height: 50px;
+      padding: 11px 13px;
+      font-size: 0.88rem;
+    }
+
+    .no.is-trembling {
+      animation: tremble 220ms ease-in-out;
+    }
+
+    .no.is-fast {
+      transition-duration: 150ms;
+    }
+
+    .yes.is-emphasized {
+      transform: scale(1.04);
+    }
+
+    .yes.is-emphasized:hover {
+      transform: translateY(-2px) scale(1.04);
+    }
+
+    .yes.is-selected {
+      animation: yes-pop 520ms cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .success-screen {
+      display: none;
+      position: relative;
+      z-index: 2;
+      min-height: 330px;
+      align-content: center;
+      justify-items: center;
+      padding: 12px 0;
+      text-align: center;
+    }
+
+    .success-screen.visible {
+      display: grid;
+      animation: reveal 700ms cubic-bezier(0.22, 1, 0.36, 1) both;
+    }
+
+    .success-message {
+      margin: 0;
+      color: var(--wine);
+      font-size: clamp(1.6rem, 7vw, 2.25rem);
+      line-height: 1.2;
+      letter-spacing: -0.04em;
+    }
+
+    .success-subtitle,
+    .success-note {
+      margin: 14px 0 0;
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+
+    .planning-screen {
+      display: none;
+      position: relative;
+      z-index: 2;
+      min-height: 330px;
+      align-content: center;
+      justify-items: center;
+      padding: 12px 0;
+      text-align: center;
+    }
+
+    .planning-screen.visible {
+      display: grid;
+      animation: reveal 600ms cubic-bezier(0.22, 1, 0.36, 1) both;
+    }
+
+    .planning-screen h2,
+    .planning-screen p {
+      margin: 0;
+    }
+
+    .planning-screen h2 {
+      color: var(--wine);
+      font-size: clamp(1.45rem, 6.5vw, 2rem);
+      line-height: 1.2;
+      letter-spacing: -0.04em;
+    }
+
+    .planning-screen .prompt {
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+
+    .planning-screen .hint {
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 0.88rem;
+      line-height: 1.45;
+    }
+
+    .field {
+      width: 100%;
+      margin-top: 20px;
+      padding: 14px 15px;
+      color: var(--ink);
+      font: inherit;
+      font-size: 1rem;
+      background: rgba(255, 255, 255, 0.78);
+      border: 1px solid rgba(111, 29, 63, 0.16);
+      border-radius: 15px;
+      outline: none;
+      accent-color: var(--rose);
+    }
+
+    .field:focus {
+      border-color: var(--rose);
+      box-shadow: 0 0 0 4px rgba(201, 66, 104, 0.14);
+    }
+
+    textarea.field {
+      min-height: 112px;
+      resize: vertical;
+    }
+
+    .field-action {
+      min-width: 190px;
+      margin-top: 20px;
+      color: #fff;
+      background: linear-gradient(135deg, var(--rose), var(--wine));
+      border-color: transparent;
+      box-shadow: 0 8px 18px rgba(111, 29, 63, 0.2);
+    }
+
+    .field-error {
+      min-height: 20px;
+      margin-top: 8px !important;
+      color: var(--wine);
+      font-size: 0.82rem !important;
+      font-weight: 700;
+    }
+
+    .final-content {
+      display: none;
+      align-content: center;
+      justify-items: center;
+      gap: 8px;
+      min-height: 330px;
+      text-align: center;
+    }
+
+    .final-content.visible {
+      display: grid;
+      animation: reveal 700ms cubic-bezier(0.22, 1, 0.36, 1) both;
+    }
+
+    .final-content h2,
+    .final-content p {
+      margin: 0;
+    }
+
+    .final-content h2 {
+      color: var(--wine);
+      font-size: clamp(1.7rem, 8vw, 2.35rem);
+      letter-spacing: -0.045em;
+    }
+
+    .final-content p {
+      max-width: 310px;
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+
+    .summary {
+      width: 100%;
+      margin: 16px 0 4px !important;
+      padding: 15px;
+      text-align: left;
+      background: rgba(255, 255, 255, 0.48);
+      border: 1px solid rgba(111, 29, 63, 0.1);
+      border-radius: 16px;
+    }
+
+    .summary strong {
+      color: var(--wine);
+    }
+
+    .combined {
+      min-width: 190px;
+      margin-top: 14px;
+      color: #fff;
+      background: linear-gradient(135deg, var(--rose), var(--wine));
+      border-color: transparent;
+      box-shadow: 0 8px 18px rgba(111, 29, 63, 0.2);
+    }
+
+    .final-reaction {
+      min-height: 24px;
+      margin: 8px 0 0;
+      color: var(--wine);
+      font-size: 0.9rem;
+      font-weight: 700;
+      opacity: 0;
+      transition: opacity 220ms ease;
+    }
+
+    .final-reaction.visible {
+      opacity: 1;
+    }
+
+    .celebration-heart,
+    .confetti {
+      position: fixed;
+      z-index: 20;
+      pointer-events: none;
+    }
+
+    .celebration-heart {
+      color: #fff;
+      font-size: 1.3rem;
+      animation: heart-rise 1800ms ease-out forwards;
+    }
+
+    .confetti {
+      top: -14px;
+      width: 8px;
+      height: 14px;
+      border-radius: 3px;
+      animation: confetti-fall 1800ms ease-out forwards;
+    }
+
+    .reaction {
+      position: relative;
+      min-height: 24px;
+      margin: 14px 0 0;
+      color: var(--wine);
+      font-size: 0.88rem;
+      font-weight: 700;
+      line-height: 1.4;
+      opacity: 0;
+      transform: translateY(-4px);
+      transition: opacity 220ms ease, transform 220ms ease;
+    }
+
+    .reaction.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .signature {
+      position: relative;
+      margin: 24px 0 0;
+      color: rgba(111, 29, 63, 0.58);
+      font-size: 0.75rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      animation: reveal 700ms cubic-bezier(0.22, 1, 0.36, 1) both;
+      animation-delay: 3.92s;
+    }
+
+    @keyframes reveal {
+      from {
+        opacity: 0;
+        transform: translateY(14px) scale(0.98);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0) rotate(-5deg);
+      }
+      50% {
+        transform: translateY(-9px) rotate(5deg);
+      }
+    }
+
+    @keyframes tremble {
+      0%, 100% {
+        transform: rotate(0);
+      }
+      25% {
+        transform: rotate(-3deg) translateX(-2px);
+      }
+      75% {
+        transform: rotate(3deg) translateX(2px);
+      }
+    }
+
+    @keyframes yes-pop {
+      0%, 100% {
+        transform: scale(1);
+      }
+      45% {
+        transform: scale(1.12);
+      }
+    }
+
+    @keyframes card-glow {
+      0%, 100% {
+        box-shadow: var(--shadow);
+      }
+      45% {
+        box-shadow: 0 24px 90px rgba(255, 255, 255, 0.62),
+          0 24px 70px rgba(111, 29, 63, 0.22);
+      }
+    }
+
+    @keyframes heart-rise {
+      from {
+        opacity: 0;
+        transform: translate(-50%, 0) scale(0.7);
+      }
+      15% {
+        opacity: 1;
+      }
+      to {
+        opacity: 0;
+        transform: translate(-50%, -180px) scale(1.15) rotate(14deg);
+      }
+    }
+
+    @keyframes confetti-fall {
+      from {
+        opacity: 1;
+        transform: translateY(0) rotate(0);
+      }
+      to {
+        opacity: 0;
+        transform: translateY(105vh) rotate(540deg);
+      }
+    }
+
+    @media (min-width: 600px) {
+      .page {
+        padding: 48px 24px;
+      }
+
+      .card {
+        border-radius: 34px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        animation-delay: 0ms !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <span class="glow glow-one" aria-hidden="true"></span>
+    <span class="glow glow-two" aria-hidden="true"></span>
+    <span class="heart heart-one" aria-hidden="true">♥</span>
+    <span class="heart heart-two" aria-hidden="true">♡</span>
+    <span class="heart heart-three" aria-hidden="true">♥</span>
+    <span class="heart heart-four" aria-hidden="true">♡</span>
+    <span class="heart heart-five" aria-hidden="true">♡</span>
+    <span class="heart heart-six" aria-hidden="true">♥</span>
+    <span class="heart heart-seven" aria-hidden="true">♡</span>
+
+    <section class="card" aria-labelledby="invite-title">
+      <div class="sushi-mark" aria-hidden="true">🍣</div>
+      <h1 class="eyebrow" id="invite-title">Oi, Luana ❤️</h1>
+      <p class="intro">Tenho uma perguntinha pra você... 👀</p>
+      <h2 class="question">Quer sair comigo pra comer um sushi? 🍣❤️</h2>
+      <p class="promise">Prometo que vai ser uma ótima ideia... 😏</p>
+
+      <div class="actions" aria-label="Escolha uma opção">
+        <button class="button yes" type="button">SIM ❤️</button>
+        <button class="button no" type="button">NÃO 😢</button>
+      </div>
+      <p class="reaction" id="reaction" role="status" aria-live="polite"></p>
+
+      <p class="signature">um convite especial</p>
+
+      <div class="success-screen" id="success-screen" aria-live="polite">
+        <h2 class="success-message" id="success-message"></h2>
+        <p class="success-subtitle" id="success-subtitle"></p>
+        <p class="success-note" id="success-note"></p>
+      </div>
+
+      <div class="planning-screen" id="date-screen">
+        <h2>Agora quero saber de você. ❤️</h2>
+        <p class="prompt">Qual seria o dia ideal para você? 📅</p>
+        <input class="field" id="date-input" type="date" aria-label="Escolha uma data">
+        <p class="hint">Escolhe o dia que for melhor para você. 😊</p>
+        <p class="field-error" id="date-error" role="alert"></p>
+        <button class="button field-action" id="date-next" type="button">CONTINUAR ❤️</button>
+      </div>
+
+      <div class="planning-screen" id="time-screen">
+        <h2>Perfeito! ❤️</h2>
+        <p class="prompt">E qual seria o melhor horário para você? ⏰</p>
+        <input class="field" id="time-input" type="time" aria-label="Escolha um horário">
+        <p class="hint">Quero escolher um horário que seja confortável para você. 😊</p>
+        <p class="field-error" id="time-error" role="alert"></p>
+        <button class="button field-action" id="time-next" type="button">CONTINUAR ❤️</button>
+      </div>
+
+      <div class="planning-screen" id="place-screen">
+        <h2>Agora uma última coisa... 👀❤️</h2>
+        <p class="prompt">Você tem alguma sugestão de lugar para a gente comer sushi?</p>
+        <textarea class="field" id="place-input" aria-label="Sugestão de lugar" placeholder="Se tiver algum lugar que você goste, pode me falar. 🍣"></textarea>
+        <p class="hint">Essa sugestão é opcional. Escolhe o que for mais confortável para você. 😊</p>
+        <button class="button field-action" id="place-next" type="button">FINALIZAR ❤️</button>
+      </div>
+
+      <div class="final-content" id="final-content">
+        <h2>EU SABIA! ❤️</h2>
+        <p class="summary" id="summary"></p>
+        <p>Perfeito, Luana. Agora já temos uma ideia para o nosso sushi. 🍣❤️</p>
+        <p>Eu vou olhar tudo com carinho e depois combinamos certinho. 😏</p>
+        <p>ENCONTRO MARCADO ❤️</p>
+        <button class="button combined" id="combined-button" type="button">COMBINADO ❤️</button>
+        <p class="final-reaction" id="final-reaction" role="status" aria-live="polite"></p>
+      </div>
+    </section>
+  </main>
+  <script>
+    const noButton = document.querySelector(".no");
+    const yesButton = document.querySelector(".yes");
+    const card = document.querySelector(".card");
+    const reaction = document.querySelector("#reaction");
+    const messages = [
+      "Escolhe o SIM, Luana ❤️",
+      "Vai ser só sushi, eu prometo 😂🍣",
+      "Você sabe que quer... 😏",
+      "Esse botão está começando a desconfiar de você...",
+      "Por que você insiste no NÃO? 😭",
+      "Olha o SIM ali tão bonitinho ❤️",
+      "Desiste do NÃO, Luana 😂"
+    ];
+    let attempts = 0;
+    let lastPosition = null;
+    let isEscaping = false;
+    let movementTimer = null;
+    let accepted = false;
+    const successScreen = document.querySelector("#success-screen");
+    const finalContent = document.querySelector("#final-content");
+    const successMessage = document.querySelector("#success-message");
+    const successSubtitle = document.querySelector("#success-subtitle");
+    const successNote = document.querySelector("#success-note");
+    const combinedButton = document.querySelector("#combined-button");
+    const finalReaction = document.querySelector("#final-reaction");
+    const dateScreen = document.querySelector("#date-screen");
+    const timeScreen = document.querySelector("#time-screen");
+    const placeScreen = document.querySelector("#place-screen");
+    const dateInput = document.querySelector("#date-input");
+    const timeInput = document.querySelector("#time-input");
+    const placeInput = document.querySelector("#place-input");
+    const dateError = document.querySelector("#date-error");
+    const timeError = document.querySelector("#time-error");
+    const summary = document.querySelector("#summary");
+    const dateNext = document.querySelector("#date-next");
+    const timeNext = document.querySelector("#time-next");
+    const placeNext = document.querySelector("#place-next");
+    const plan = {
+      date: "",
+      time: "",
+      place: ""
+    };
+
+    function clamp(value, min, max) {
+      return Math.min(Math.max(value, min), max);
+    }
+
+    function rectanglesOverlap(first, second) {
+      return !(
+        first.right <= second.left ||
+        first.left >= second.right ||
+        first.bottom <= second.top ||
+        first.top >= second.bottom
+      );
+    }
+
+    function getViewportSize() {
+      const viewport = window.visualViewport;
+      return {
+        width: viewport ? viewport.width : window.innerWidth,
+        height: viewport ? viewport.height : window.innerHeight
+      };
+    }
+
+    function getSafePosition() {
+      const margin = 18;
+      const { width: viewportWidth, height: viewportHeight } = getViewportSize();
+      const buttonRect = noButton.getBoundingClientRect();
+      const buttonWidth = buttonRect.width;
+      const buttonHeight = buttonRect.height;
+      const minX = margin;
+      const maxX = Math.max(minX, viewportWidth - buttonWidth - margin);
+      const minY = margin;
+      const maxY = Math.max(minY, viewportHeight - buttonHeight - margin);
+      const yesRect = yesButton.getBoundingClientRect();
+      const cardRect = card.getBoundingClientRect();
+      const minimumDistance = Math.min(42 + attempts * 16, 150);
+      const preferredDistance = attempts < 2 ? 110 : attempts < 4 ? 220 : 360;
+      let fallbackWithoutYes = null;
+      let fallbackWithoutCard = null;
+
+      for (let attempt = 0; attempt < 50; attempt += 1) {
+        const x = minX + Math.random() * (maxX - minX);
+        const y = minY + Math.random() * (maxY - minY);
+        const candidate = {
+          left: x,
+          top: y,
+          right: x + buttonWidth,
+          bottom: y + buttonHeight
+        };
+        const overlapsYes = rectanglesOverlap(candidate, yesRect);
+        const overlapsCard = rectanglesOverlap(candidate, cardRect);
+        const distance = lastPosition
+          ? Math.hypot(x - lastPosition.x, y - lastPosition.y)
+          : 0;
+        const isFarEnough = !lastPosition || distance >= minimumDistance;
+        const isPreferredDistance = !lastPosition || distance <= preferredDistance;
+
+        if (!overlapsYes && !fallbackWithoutYes) {
+          fallbackWithoutYes = { x, y };
+        }
+        if (!overlapsYes && !overlapsCard && !fallbackWithoutCard) {
+          fallbackWithoutCard = { x, y };
+        }
+        if (!overlapsYes && !overlapsCard && isFarEnough && isPreferredDistance) {
+          return { x, y };
+        }
+      }
+
+      if (fallbackWithoutCard) {
+        return fallbackWithoutCard;
+      }
+      if (fallbackWithoutYes) {
+        return fallbackWithoutYes;
+      }
+
+      return {
+        x: clamp(lastPosition ? lastPosition.x : minX, minX, maxX),
+        y: clamp(lastPosition ? lastPosition.y : minY, minY, maxY)
+      };
+    }
+
+    function applyPosition(position) {
+      const { width: viewportWidth, height: viewportHeight } = getViewportSize();
+      const buttonRect = noButton.getBoundingClientRect();
+      const margin = 18;
+      const maxX = Math.max(margin, viewportWidth - buttonRect.width - margin);
+      const maxY = Math.max(margin, viewportHeight - buttonRect.height - margin);
+      const x = clamp(position.x, margin, maxX);
+      const y = clamp(position.y, margin, maxY);
+
+      noButton.style.position = "fixed";
+      noButton.style.left = `${x}px`;
+      noButton.style.top = `${y}px`;
+      noButton.style.right = "auto";
+      noButton.style.bottom = "auto";
+      noButton.style.transform = "none";
+      noButton.style.zIndex = "10";
+      lastPosition = { x, y };
+    }
+
+    function celebrate() {
+      const colors = ["#c94268", "#ef7891", "#f8c35d", "#fff", "#8d3158"];
+
+      for (let index = 0; index < 22; index += 1) {
+        const piece = document.createElement("span");
+        piece.className = "confetti";
+        piece.style.left = `${Math.random() * 100}vw`;
+        piece.style.background = colors[index % colors.length];
+        piece.style.animationDelay = `${Math.random() * 180}ms`;
+        piece.style.transform = `rotate(${Math.random() * 180}deg)`;
+        document.body.appendChild(piece);
+        setTimeout(() => piece.remove(), 2100);
+      }
+
+      for (let index = 0; index < 10; index += 1) {
+        const heart = document.createElement("span");
+        heart.className = "celebration-heart";
+        heart.textContent = index % 2 === 0 ? "♥" : "♡";
+        heart.style.left = `${12 + Math.random() * 76}vw`;
+        heart.style.bottom = `${8 + Math.random() * 18}vh`;
+        heart.style.animationDelay = `${Math.random() * 220}ms`;
+        document.body.appendChild(heart);
+        setTimeout(() => heart.remove(), 2200);
+      }
+    }
+
+    function showFinalScreen() {
+      successScreen.classList.remove("visible");
+      dateScreen.classList.add("visible");
+    }
+
+    function showPlanningScreen(screen) {
+      [dateScreen, timeScreen, placeScreen].forEach((item) => {
+        item.classList.remove("visible");
+      });
+      screen.classList.add("visible");
+    }
+
+    function formatDate(value) {
+      const [year, month, day] = value.split("-").map(Number);
+      return new Intl.DateTimeFormat("pt-BR").format(new Date(year, month - 1, day));
+    }
+
+    function addSummaryLine(label, value, isLast = false) {
+      const strong = document.createElement("strong");
+      strong.textContent = label;
+      summary.appendChild(strong);
+      summary.appendChild(document.createTextNode(` ${value}`));
+      if (!isLast) {
+        summary.appendChild(document.createElement("br"));
+      }
+    }
+
+    yesButton.addEventListener("pointerdown", (event) => {
+      event.preventDefault();
+      if (accepted) {
+        return;
+      }
+
+      accepted = true;
+      clearTimeout(movementTimer);
+      card.classList.add("accepted");
+      card.classList.add("celebrating");
+      yesButton.classList.add("is-selected");
+      noButton.style.display = "none";
+      reaction.style.display = "none";
+      document.querySelector(".actions").style.display = "none";
+      document.querySelector(".signature").style.display = "none";
+      celebrate();
+
+      successScreen.classList.add("visible");
+      successMessage.textContent = "EU SABIA, LUANA! ❤️🍣";
+      successSubtitle.textContent = "";
+      successNote.textContent = "";
+      setTimeout(() => {
+        successSubtitle.textContent = "Então temos um encontro marcado. 😏";
+      }, 900);
+      setTimeout(showFinalScreen, 1900);
+    });
+
+    dateNext.addEventListener("pointerdown", (event) => {
+      event.preventDefault();
+      if (!dateInput.value) {
+        dateError.textContent = "Escolhe uma data que seja boa para você. ❤️";
+        dateInput.focus();
+        return;
+      }
+
+      dateError.textContent = "";
+      plan.date = dateInput.value;
+      showPlanningScreen(timeScreen);
+    });
+
+    timeNext.addEventListener("pointerdown", (event) => {
+      event.preventDefault();
+      if (!timeInput.value) {
+        timeError.textContent = "Escolhe um horário confortável para você. ❤️";
+        timeInput.focus();
+        return;
+      }
+
+      timeError.textContent = "";
+      plan.time = timeInput.value;
+      showPlanningScreen(placeScreen);
+    });
+
+    placeNext.addEventListener("pointerdown", (event) => {
+      event.preventDefault();
+      plan.place = placeInput.value.trim();
+      const placeText = plan.place
+        ? plan.place
+        : "Ainda vamos escolher juntos ❤️";
+
+      summary.replaceChildren();
+      addSummaryLine("📅 Dia:", formatDate(plan.date));
+      addSummaryLine("⏰ Horário:", plan.time);
+      addSummaryLine("🍣 Lugar:", placeText, true);
+      placeScreen.classList.remove("visible");
+      finalContent.classList.add("visible");
+    });
+
+    combinedButton.addEventListener("pointerdown", (event) => {
+      event.preventDefault();
+      if (!accepted) {
+        return;
+      }
+
+      finalReaction.textContent = "Fechado! Agora esse sushi vai sair do papel. 🍣❤️";
+      finalReaction.classList.remove("visible");
+      requestAnimationFrame(() => finalReaction.classList.add("visible"));
+      celebrate();
+    });
+
+    noButton.addEventListener("pointerdown", (event) => {
+      event.preventDefault();
+      event.stopPropagation();
+      if (accepted) {
+        return;
+      }
+
+      const message = messages[attempts % messages.length];
+      reaction.textContent = message;
+      reaction.classList.remove("visible");
+      requestAnimationFrame(() => reaction.classList.add("visible"));
+
+      if (!isEscaping) {
+        const originalRect = noButton.getBoundingClientRect();
+        isEscaping = true;
+        lastPosition = { x: originalRect.left, y: originalRect.top };
+        document.body.appendChild(noButton);
+        noButton.style.position = "fixed";
+      }
+
+      const nextAttempt = attempts + 1;
+      noButton.classList.toggle("is-compact", nextAttempt >= 5);
+      noButton.classList.toggle("is-fast", nextAttempt >= 5);
+      yesButton.classList.toggle("is-emphasized", nextAttempt >= 5);
+      noButton.classList.remove("is-trembling");
+      clearTimeout(movementTimer);
+
+      const move = () => {
+        applyPosition(getSafePosition());
+      };
+
+      if (nextAttempt >= 3 && nextAttempt <= 4) {
+        noButton.classList.add("is-trembling");
+        movementTimer = setTimeout(move, 220);
+      } else {
+        move();
+      }
+
+      attempts += 1;
+    });
+
+    window.addEventListener("resize", () => {
+      if (!isEscaping || !lastPosition) {
+        return;
+      }
+
+      applyPosition(lastPosition);
+      const currentRect = noButton.getBoundingClientRect();
+      if (rectanglesOverlap(currentRect, yesButton.getBoundingClientRect())) {
+        applyPosition(getSafePosition());
+      }
+    });
+  </script>
+</body>
+</html>
